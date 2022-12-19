@@ -1,3 +1,16 @@
+# Origin Seeds
+Origin.create!([
+  {country: "France"},
+  {country: "Portugal"},
+  {country: "United States"},
+  {country: "Italy"},
+  {country: "New Zealand"},
+  {country: "Hungary"},
+  {country: "Germany"},
+  {country: "Australia"},
+  {country: "South Africa"},
+  {country: "Argentina"}
+])
 # Wine Seeds
 Wine.create!([
   {name: "The Delicious Monster", blend: "Chenin Blanc, Chardonnay, Hanepoot, Columbar", price: "5.99", origin_id: 9, style: "Balanced and crisp", description: "The balance of fruit, acid, and sweetness brings out the  flavors in harmony to create a  refreshing, easy-drinking wine.", photo_url: "https://roodezandt.co.za/wp-content/uploads/2021/08/mcgregor-the-delicious-monster.jpg", vegan: true, organic: false, sparkling: false, sweet: "Off-Dry", color:"White"},
