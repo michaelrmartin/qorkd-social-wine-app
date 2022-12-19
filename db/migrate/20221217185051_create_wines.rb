@@ -9,11 +9,10 @@ class CreateWines < ActiveRecord::Migration[7.0]
       t.string :photo_url
       t.boolean :vegan
       t.boolean :sparkling
-      t.string :profile
       t.text :description
       t.string :color
       t.string :sweet
-
+      t.boolean :organic
       t.timestamps
     end
   end
