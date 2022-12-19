@@ -13,6 +13,7 @@ class CreateWines < ActiveRecord::Migration[7.0]
       t.string :color
       t.string :sweet
       t.boolean :organic
+      
       t.timestamps
     end
   end
