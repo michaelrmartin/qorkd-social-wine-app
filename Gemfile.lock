@@ -217,6 +217,7 @@ DEPENDENCIES
   debug
   http
   jb
+  jwt
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
