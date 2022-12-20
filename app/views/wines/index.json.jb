@@ -1,0 +1,19 @@
+@wines.map do |wine|
+  {
+    id: wine.id,
+    name: wine.name,
+    blend: wine.blend,
+    price: wine.price,
+    style: wine.style,
+    description: wine.description,
+    vegan: wine.vegan,
+    color: wine.color,
+    sparkling: wine.sparkling,
+    organic: wine.organic,
+    sweet: wine.sweet,
+    origin: wine.origin,
+    country: wine.origin.country,
+    photo: wine.photo_url,
+    friendly_created_at: wine.friendly_created_at,
+  }
+end
