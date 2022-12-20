@@ -1,0 +1,47 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzE2MzcyOTF9.h2qvSGg0-eVwzGpZweeYfCP2BmIDyzGBPlt25xpTiv8
+
+### Wines Index
+GET http://localhost:3000/wines.json
+Content-Type: application/json
+
+### Wines Show
+GET http://localhost:3000/wines/12.json
+
+### Wines Update
+PATCH http://localhost:3000/wines/33.json
+Content-Type: application/json
+
+{
+  "name": "Finca Flichman Gestos Malbec"
+}
+
+### Wines Destroy
+DELETE http://localhost:3000/wines/10
+
+### Users create (signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "usernamename": "Michael",
+  "email": "michael@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "michael@test.com",
+  "password": "password"
+}
+
+### Twilio Post
+POST http://localhost:3000/sendtext.json
+Content-Type: application/json
+
+{
+  "phone": "+17708261460",
+  "textBody": "Hello!"
+}
