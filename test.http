@@ -45,3 +45,11 @@ Content-Type: application/json
   "phone": "+17708261460",
   "textBody": "Hello!"
 }
+
+### User Profile Post
+POST http://localhost:3000/user_profiles.json
+Content-Type: application/json
+
+{
+  "user_id": "1"
+}
