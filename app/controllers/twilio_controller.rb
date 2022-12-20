@@ -1,7 +1,7 @@
 class TwilioController < ApplicationController
   require 'twilio-ruby'
   
-  def index
+  def create
     
     account_sid = Rails.application.credentials.twilio[:account_sid]
     auth_token = Rails.application.credentials.twilio[:auth_token] 

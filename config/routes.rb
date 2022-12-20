@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   # Session routes
   post "/sessions" => "sessions#create"
   
+  # Twilio route
+  post "/sendtext" => "twilio#create"
 end
