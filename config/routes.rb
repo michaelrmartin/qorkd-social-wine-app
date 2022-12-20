@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  
+  # Wine routes
+  get "/wines" => "wines#index"
+  post "/wines" => "wines#create"
+  get "/wines/:id" => "wines#show"
+  patch "/wines/:id" => "wines#update"
+  delete "/wines/:id" => "wines#destroy"
   
   #User routes
   post "/users" => "users#create"
@@ -12,4 +15,5 @@ Rails.application.routes.draw do
   
   # Twilio route
   post "/sendtext" => "twilio#create"
+  
 end
