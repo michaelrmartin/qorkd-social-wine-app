@@ -21,14 +21,13 @@ class WinesController < ApplicationController
       price: params[:price],
       origin_id: params[:origin_id],
       style: params[:style],
-      photo_url: params[:photo_url]
+      photo_url: params[:photo_url],
       description: params[:description],
       vegan: params[:vegan],
       sparkling: params[:sparkling],
       color: params[:color],
       sweet: params[:sweet],
       organic: params[:organic]
-      
     )
 
     if wine.save
