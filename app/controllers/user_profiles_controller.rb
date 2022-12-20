@@ -1,4 +1,18 @@
 class UserProfilesController < ApplicationController
+  
+  def index
+    @user_profiles = UserProfile.all
+
+    render template: "user_profiles/index"
+  end
+
+  def show
+    user_id = params["id"]
+    @user_profile = UserProfile.find_by(id: user_id)
+
+    render template: "user_profiles/show"
+
+  end
 
   def create
     user_profile = UserProfile.new(
