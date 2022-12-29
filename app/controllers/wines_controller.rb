@@ -60,7 +60,7 @@ class WinesController < ApplicationController
 
     if wine.save
       @wine = wine
-      render template:  "wines/show"
+      render template: "wines/show"
     else 
       render json: {errors: wine.errors.full_messages} ,
       status: 422

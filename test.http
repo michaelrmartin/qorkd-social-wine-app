@@ -5,14 +5,14 @@ GET http://localhost:3000/wines.json
 Content-Type: application/json
 
 ### Wines Show
-GET http://localhost:3000/wines/12.json
+GET http://localhost:3000/wines/33.json
 
 ### Wines Update
 PATCH http://localhost:3000/wines/33.json
 Content-Type: application/json
 
 {
-  "name": "Finca Flichman Gestos Malbec"
+  "name": "Ruggero di Bardo Susumaniello"
 }
 
 ### Wines Destroy
@@ -23,7 +23,7 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "usernamename": "Michael",
+  "username": "Michael",
   "email": "michael@test.com",
   "password": "password",
   "password_confirmation": "password"
@@ -72,5 +72,10 @@ PATCH http://localhost:3000/user_profiles/1
 Content-Type: application/json
 
 {
-  "name": "Michael"
+  "name": "Michael",
+  "bio": " ",
+  "phone": " ",
+  "location": " ",
+  "user_img_url": " "
+
 }

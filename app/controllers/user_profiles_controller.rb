@@ -7,8 +7,8 @@ class UserProfilesController < ApplicationController
   end
 
   def show
-    user_id = params["id"]
-    @user_profile = UserProfile.find_by(user_id: user_id)
+
+    @user_profile = UserProfile.find_by(user_id: params[:id])
 
     render template: "user_profiles/show"
 
@@ -32,21 +32,22 @@ class UserProfilesController < ApplicationController
   end
 
   def update
-    user_id = params["id"]
-    user_profile = UserProfile.find(
-      user_id: params[:user_id],
-      name: " ",
-      bio: " ",
-      phone: " ",
-      location: " ",
-      user_img_url: " "
-    )
+
+    user_profile = UserProfile.find_by(user_id: params[:id])
+      user_profile.name = params[:name] || user_profile.name
+      user_profile.bio = params[:bio] || user_profile.bio
+      user_profile.phone = params[:phone] || user_profile.phone
+      user_profile.location = params[:location] || user_profile.location
+      user_profile.user_img_url = params[:user_img_url] || user_profile.user_img_url
+    
     
     if user_profile.save
-      render json: { message: "User Profile created successfully" }, status: :created
+      @user_profile = user_profile
+      render template: "user_profiles/show"
     else
-      render json: { errors: user_profile.errors.full_messages }, status: :bad_request
+      render json: { errors: user_profile.errors.full_messages }, status: 422
     end
+
   end
 
   def destroy
