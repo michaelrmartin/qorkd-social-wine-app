@@ -1,3 +1,3 @@
 class Origin < ApplicationRecord
-  belongs_to :wines
+  has_many :wines
 end

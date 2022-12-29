@@ -53,3 +53,24 @@ Content-Type: application/json
 {
   "user_id": "1"
 }
+
+###User Profile Show
+GET http://localhost:3000/user_profiles/1.json
+Content-Type: application/json
+
+###User Profile Index
+GET http://localhost:3000/user_profiles.json
+Content-Type: application/json
+
+### User Profile Destroy
+DELETE http://localhost:3000/user_profiles/1
+Content-Type: application/json
+
+
+### User Profile Update
+PATCH http://localhost:3000/user_profiles/1
+Content-Type: application/json
+
+{
+  "name": "Michael"
+}

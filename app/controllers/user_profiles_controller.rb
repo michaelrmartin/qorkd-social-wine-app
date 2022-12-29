@@ -8,7 +8,7 @@ class UserProfilesController < ApplicationController
 
   def show
     user_id = params["id"]
-    @user_profile = UserProfile.find_by(id: user_id)
+    @user_profile = UserProfile.find_by(user_id: user_id)
 
     render template: "user_profiles/show"
 
@@ -47,6 +47,12 @@ class UserProfilesController < ApplicationController
     else
       render json: { errors: user_profile.errors.full_messages }, status: :bad_request
     end
+  end
+
+  def destroy
+    user_profile = UserProfile.find_by(user_id: params[:id])
+    user_profile.destroy
+    render json: {message: "User Profile successfully destroyed."}
   end
 
 end
