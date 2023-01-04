@@ -15,11 +15,14 @@ class PostsController < ApplicationController
   end
 
   def create
+    response = Cloudinary::Uploader.upload(params[:image_file], resource_type: :auto)
+    cloudinary_url = response["secure_url"]
+
     post = Post.new(
       user_id: params[:user_id],
       wine_id: params[:wine_id],
       description: params[:description],
-      post_img_url: params[:post_img_url]
+      post_img_url: cloudinary_url
     )
 
     if post.save
@@ -38,7 +41,7 @@ class PostsController < ApplicationController
     post.user_id = post.user_id
     post.wine_id = params[:wine_id] || post.wine_id
     post.description = params[:description] || post.description
-    post.post_img_url = params[:post_img_url] || post.post_img_url
+    post.post_img_url = cloudinary_url || post.post_img_url
 
     if post.save
       @post = post

@@ -32,13 +32,15 @@ class UserProfilesController < ApplicationController
   end
 
   def update
-    
+    response = Cloudinary::Uploader.upload(params[:image_file], resource_type: :auto)
+    cloudinary_url = response["secure_url"]
+
     user_profile = UserProfile.find_by(user_id: params[:id])
       user_profile.name = params[:name] || user_profile.name
       user_profile.bio = params[:bio] || user_profile.bio
       user_profile.phone = params[:phone] || user_profile.phone
       user_profile.location = params[:location] || user_profile.location
-      user_profile.user_img_url = params[:user_img_url] || user_profile.user_img_url
+      user_profile.user_img_url = cloudinary_url || user_profile.user_img_url
     
     
     if user_profile.save
