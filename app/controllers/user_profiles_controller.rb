@@ -32,7 +32,7 @@ class UserProfilesController < ApplicationController
   end
 
   def update
-
+    
     user_profile = UserProfile.find_by(user_id: params[:id])
       user_profile.name = params[:name] || user_profile.name
       user_profile.bio = params[:bio] || user_profile.bio
@@ -43,6 +43,7 @@ class UserProfilesController < ApplicationController
     
     if user_profile.save
       @user_profile = user_profile
+
       render template: "user_profiles/show"
     else
       render json: { errors: user_profile.errors.full_messages }, status: 422

@@ -1,0 +1,9 @@
+{
+  id: @post.id,
+  user_id: @post.user_id,
+  wine_id: @post.wine_id,
+  wine_name: @post.wine.name,
+  description: @post.description,
+  friendly_created_at: @post.friendly_created_at,
+  friendly_updated_at: @post.friendly_updated_at,
+}
