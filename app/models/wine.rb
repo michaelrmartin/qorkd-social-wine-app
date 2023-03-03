@@ -4,8 +4,7 @@ class Wine < ApplicationRecord
   validates :name, uniqueness: true
   validates :price, presence: true
 
-  belongs_to :origin
-  belongs_to :post
+  has_one :origin
 
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
