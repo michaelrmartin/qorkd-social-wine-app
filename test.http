@@ -43,14 +43,14 @@ PATCH http://localhost:3000/users/1.json
 Content-Type: application/json
 
 {
-  "username": "Michael",
+  "username": "michael",
   "email": "michael@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
 
 ### User destroy
-
+DELETE http://localhost:3000/users/1
 
 ### Sessions create (login)
 POST http://localhost:3000/sessions.json
@@ -76,11 +76,11 @@ Content-Type: application/json
 
 
 {
-  "user_id": "1"
+  "user_id": "2"
 }
 
 ###User Profile Show
-GET http://localhost:3000/user_profiles/1.json
+GET http://localhost:3000/user_profiles/2.json
 Content-Type: application/json
 
 ###User Profile Index
@@ -88,22 +88,16 @@ GET http://localhost:3000/user_profiles.json
 Content-Type: application/json
 
 ### User Profile Destroy
-DELETE http://localhost:3000/user_profiles/1
+DELETE http://localhost:3000/user_profiles/2
 Content-Type: application/json
 
 
 
 
 ### User Profile Update
-PATCH http://localhost:3000/user_profiles/1
+PATCH http://localhost:3000/user_profiles/2.json
 Content-Type: application/json
 
-
 {
-  "name": "Michael",
-  "bio": " ",
-  "phone": " ",
-  "location": " ",
-  "user_img_url": " "
-
+  "name": "Michael"
 }
