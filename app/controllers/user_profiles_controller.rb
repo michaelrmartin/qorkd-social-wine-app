@@ -16,15 +16,15 @@ class UserProfilesController < ApplicationController
 
   def create
 
-    cloudinary_url = "https://res.cloudinary.com/do4nbvqf0/image/upload/v1678142825/QORKD/Default-user-image_jh43or.jpg"
+    # cloudinary_url = "https://res.cloudinary.com/do4nbvqf0/image/upload/v1678142825/QORKD/Default-user-image_jh43or.jpg"
 
     user_profile = UserProfile.new(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       name: "??",
       bio: "??",
       phone: "??",
       location: "?? ",
-      user_img_url: cloudinary_url
+      user_img_url: "??"
     )
     
     if user_profile.save
@@ -36,8 +36,8 @@ class UserProfilesController < ApplicationController
 
   def update
 
-    response = Cloudinary::Uploader.upload(params[:image_file], resource_type: :auto)
-    cloudinary_url = response["secure_url"]
+    # response = Cloudinary::Uploader.upload(params[:image_file], resource_type: :auto)
+    # cloudinary_url = response["secure_url"]
 
     user_profile = UserProfile.find_by(user_id: params[:id])
     
@@ -45,7 +45,7 @@ class UserProfilesController < ApplicationController
       user_profile.bio = params[:bio] || user_profile.bio
       user_profile.phone = params[:phone] || user_profile.phone
       user_profile.location = params[:location] || user_profile.location
-      user_profile.user_img_url = cloudinary_url|| user_profile.user_img_url
+      user_profile.user_img_url = params[:user_img_url] || user_profile.user_img_url
     
     
     if user_profile.save
