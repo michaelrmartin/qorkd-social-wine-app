@@ -54,3 +54,4 @@ gem 'twilio-ruby', '~> 5.71.0'
 gem "cloudinary"
 gem "disco"
 gem "faker"
+gem "activerecord-import"
