@@ -22,6 +22,7 @@ class PostsController < ApplicationController
       user_id: params[:user_id],
       wine_id: params[:wine_id],
       description: params[:description],
+      rating: params[:rating],
       post_img_url: params[:post_img_url]
     )
 
@@ -40,6 +41,7 @@ class PostsController < ApplicationController
 
     post.user_id = post.user_id
     post.wine_id = params[:wine_id] || post.wine_id
+    post.rating = params[:rating] || post.rating
     post.description = params[:description] || post.description
     post.post_img_url = params[:post_img_url] || post.post_img_url
 
