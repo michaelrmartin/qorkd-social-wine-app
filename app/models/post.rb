@@ -1,10 +1,11 @@
 class Post < ApplicationRecord
-  belongs_to :user,
+
+  belongs_to :user
+
   belongs_to :wine
+
   validates :rating, :user_id, :wine_id, presence: true
   validates :rating, numericality: { in: 0..5 }
-
-  has_attached_file
   
   def friendly_created_at
     created_at.strftime("%B %e, %Y")

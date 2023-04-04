@@ -5,6 +5,7 @@ class Wine < ApplicationRecord
   validates :price, presence: true
 
   belongs_to :origin
+
   has_many :posts
 
   def overall_rating
@@ -27,6 +28,14 @@ class Wine < ApplicationRecord
       end
     end
     count
+  end
+
+  def friendly_created_at
+    created_at.strftime("%B %e, %Y")
+  end
+
+  def friendly_updated_at
+    updated_at.strftime("%B %e, %Y")
   end
 
 end

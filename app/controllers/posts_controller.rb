@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     # cloudinary_url = response["secure_url"]
 
     post = Post.new(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       wine_id: params[:wine_id],
       description: params[:description],
       rating: params[:rating],

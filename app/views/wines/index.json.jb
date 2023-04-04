@@ -13,7 +13,7 @@
     sweet: wine.sweet,
     country: wine.origin.country,
     photo: wine.photo_url,
-    rating: wine.overall_rating,
+    overall_rating: wine.overall_rating,
     friendly_created_at: wine.friendly_created_at,
   }
 end

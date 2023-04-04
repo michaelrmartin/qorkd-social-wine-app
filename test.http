@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzE2MzcyOTF9.h2qvSGg0-eVwzGpZweeYfCP2BmIDyzGBPlt25xpTiv8
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2ODA3MjI4NzN9.w0V9FzjiPbrXRK-JbVODJ1UgeGGC6MVssYrtp-DUft8
 
 ### Wines Index
 GET http://localhost:3000/wines.json
@@ -24,8 +24,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "username": "Michael",
-  "email": "michael@test.com",
+  "username": "buckley",
+  "email": "buckley@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -35,7 +35,7 @@ GET http://localhost:3000/users.json
 Content-Type: application/json
 
 ### User show
-GET http://localhost:3000/users/1.json
+GET http://localhost:3000/users/2.json
 Content-Type: application/json
 
 ### User update
@@ -57,7 +57,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "michael@test.com",
+  "email": "buckley@test.com",
   "password": "password"
 }
 
@@ -73,22 +73,20 @@ Content-Type: application/json
 ### User Profile Post
 POST http://localhost:3000/user_profiles.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
-
-{
-  "user_id": "2"
-}
 
 ###User Profile Show
 GET http://localhost:3000/user_profiles/2.json
 Content-Type: application/json
+
 
 ###User Profile Index
 GET http://localhost:3000/user_profiles.json
 Content-Type: application/json
 
 ### User Profile Destroy
-DELETE http://localhost:3000/user_profiles/2
+DELETE http://localhost:3000/user_profiles/3
 Content-Type: application/json
 
 
@@ -97,6 +95,7 @@ Content-Type: application/json
 ### User Profile Update
 PATCH http://localhost:3000/user_profiles/2.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
   "name": "Michael"

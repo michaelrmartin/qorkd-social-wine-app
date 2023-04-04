@@ -16,22 +16,30 @@ class UserProfilesController < ApplicationController
 
   def create
 
-    # cloudinary_url = "https://res.cloudinary.com/do4nbvqf0/image/upload/v1678142825/QORKD/Default-user-image_jh43or.jpg"
-
-    user_profile = UserProfile.new(
-      user_id: current_user.id,
-      name: "??",
-      bio: "??",
-      phone: "??",
-      location: "?? ",
-      user_img_url: "??"
-    )
+    cloudinary_url = "https://res.cloudinary.com/do4nbvqf0/image/upload/v1678142825/QORKD/Default-user-image_jh43or.jpg"
     
-    if user_profile.save
-      render json: { message: "User Profile created successfully" }, status: :created
+    user_profile = UserProfile.find_by(user_id: current_user.id)
+    
+    if !user_profile
+      user_profile = UserProfile.new(
+        user_id: current_user.id,
+        name: "??",
+        bio: "??",
+        phone: "??",
+        location: "?? ",
+        user_img_url: cloudinary_url
+      )
+    
+      if user_profile.save
+        render json: { message: "User Profile created successfully" }, status: :created
+      else
+        render json: { errors: user_profile.errors.full_messages }, status: :bad_request
+      end
+
     else
-      render json: { errors: user_profile.errors.full_messages }, status: :bad_request
+      render json: {message: "user profile already exists"}
     end
+
   end
 
   def update
@@ -39,7 +47,7 @@ class UserProfilesController < ApplicationController
     # response = Cloudinary::Uploader.upload(params[:image_file], resource_type: :auto)
     # cloudinary_url = response["secure_url"]
 
-    user_profile = UserProfile.find_by(user_id: params[:id])
+    user_profile = UserProfile.find_by(user_id: current_user.id)
     
       user_profile.name = params[:name] || user_profile.name
       user_profile.bio = params[:bio] || user_profile.bio
