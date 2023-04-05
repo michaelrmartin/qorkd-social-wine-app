@@ -34,5 +34,11 @@ Rails.application.routes.draw do
   
   # Twilio route
   post "/sendtext" => "twilio#create"
+
+  # Follow routes
+
+  get "/follows" => "follows#index"
+  post "/follows" => "follows#create"
+  delete "follows/:id" => "follows#destroy"
   
 end
