@@ -18,16 +18,16 @@ class UserProfilesController < ApplicationController
 
     cloudinary_url = "https://res.cloudinary.com/do4nbvqf0/image/upload/v1678142825/QORKD/Default-user-image_jh43or.jpg"
     
-    user_profile = UserProfile.find_by(user_id: current_user.id)
+    # user_profile = UserProfile.find_by(user_id: current_user.id)
     
     if !user_profile
       user_profile = UserProfile.new(
-        user_id: current_user.id,
-        name: "??",
-        bio: "??",
-        phone: "??",
-        location: "?? ",
-        user_img_url: cloudinary_url
+        user_id: params[:user_id] || current_user.id,
+        name: params[:name] || "??",
+        bio: params[:bio] || "??",
+        phone: params[:phone] || "??",
+        location: params[:location] || "??",
+        user_img_url: params[:user_img_url] || cloudinary_url
       )
     
       if user_profile.save

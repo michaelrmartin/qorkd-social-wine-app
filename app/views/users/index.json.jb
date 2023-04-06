@@ -3,6 +3,5 @@
   id: user.id,
   username: user.username,
   email: user.email,
-  recommendations: user.recommendations
 }
 end
