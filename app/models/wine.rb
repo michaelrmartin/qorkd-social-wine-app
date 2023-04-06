@@ -30,6 +30,22 @@ class Wine < ApplicationRecord
     count
   end
 
+  def wine_recommendations
+
+    data = Post.user_wine_ratings
+
+    recommender = Disco::Recommender.new
+
+    recommender.fit(data)
+
+    item_recs = recommender.item_recs(self.id)
+    
+
+    return {item_recs: item_recs}
+
+  end
+
+
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
   end
