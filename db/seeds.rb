@@ -1,3 +1,5 @@
+require 'faker'
+
 Origin.create!([
   {country: "France"},
   {country: "Portugal"},
@@ -111,3 +113,12 @@ UserProfile.create!([
   {name: "Sacha Braun", user_img_url: "https://robohash.org/etnequemagnam.png?size=300x300&set=set1", bio: "Rerum occaecati perspiciatis ratione.", phone: "1-452-561-0591", location: "East Rae, SC", user_id: 30}
 ])
 
+150.times do
+  Post.create!(
+    description: Faker::Lorem.sentence,
+    user_id: rand(1..30),
+    wine_id: rand(1..34),
+    post_img_url: Faker::LoremFlickr.image(search_terms: ['wine', 'glass'], match_all: true),
+    rating: rand(0..5)
+  )
+end
