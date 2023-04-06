@@ -61,6 +61,20 @@ class User < ApplicationRecord
 
   end
 
+  def num_followed
+    self.followings.length
+  end
+
+  def num_followers
+    users = User.all.includes(:follows)
+    count = 0
+    users.each do |user|
+      count += 1 if user.follows_aray.include?(self.id)
+    end
+    count
+  end
+  
+
   def num_unique_wines
     result = []
     ids = []
