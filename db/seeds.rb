@@ -1,5 +1,6 @@
 require 'faker'
 
+# Origin seeds
 Origin.create!([
   {country: "France"},
   {country: "Portugal"},
@@ -12,6 +13,7 @@ Origin.create!([
   {country: "South Africa"},
   {country: "Argentina"}
 ])
+# Wine seeds
 Wine.create!([
   {name: "The Delicious Monster", blend: "Chenin Blanc, Chardonnay, Hanepoot, Columbar", price: "5.99", origin_id: 9, style: "Balanced and crisp", photo_url: "https://roodezandt.co.za/wp-content/uploads/2021/08/mcgregor-the-delicious-monster.jpg", vegan: true, sparkling: false, description: "The balance of fruit, acid, and sweetness brings out the  flavors in harmony to create a  refreshing, easy-drinking wine.", color: "White", sweet: "Off-Dry", organic: false},
   {name: "Almond Creek Sparkling Wine", blend: "Chardonnay", price: "6.99", origin_id: 3, style: "Sweet, bubbly, and amandine", photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHLm6GLxqXwqDeLctrpgFHC911wTxLTjhvDYz6-DU4gp8nL3PYywHVrjQ0_yuMamKFj4&usqp=CAU", vegan: false, sparkling: true, description: "Crisp and bubbly with marzipan and other nutty flavors and  subtly sweet aftertaste.", color: "White", sweet: "Sweet", organic: false},
@@ -48,75 +50,58 @@ Wine.create!([
   {name: "Ruggero di Bardo Susumaniello", blend: "Susumaniello", price: "10.99", origin_id: 4, style: "Fresh and fruity", photo_url: "https://images.squarespace-cdn.com/content/v1/57689a02e4fcb58e1ae15194/1517623079457-Z4EX6EF9P0KMV3RZ7JI2/IMG_9638+2.JPG", vegan: true, sparkling: false, description: "On the nose, blueberries and ripe red fruits, underbrush and red flower, then tobacco, aromatic herbs and a light zesty sensation.", color: "Red", sweet: "Dry", organic: false},
   {name: "Grifone 1967 Toscana Rosso IGT", blend: "Sangiovese, Cabernet Sauvignon, Syrah", price: "6.99", origin_id: 4, style: "Smooth and dry, but fruit-forward", photo_url: "https://bloximages.newyork1.vip.townnews.com/nola.com/content/tncms/assets/v3/editorial/1/f6/1f6a3cd7-59c9-59fe-804e-4b72b9e989e8/5dd4f75eda089.image.jpg?resize=252%2C500", vegan: true, sparkling: false, description: "Cherry, plum, and blackberry with gentle vanilla and oak  notes.", color: "Red", sweet: "Dry", organic: false}
 ])
+# User seeds
 User.create!([
-  {username: "donnelly.belkis", email: "belkis.donnelly@brown-stracke.co", password_digest: "$2a$12$GbOVJ4HHet22zUdvy2Vu1.FPDjassP.8iGm1IoJbM04d3TS6IscHW"},
-  {username: "gutmann_madelene", email: "gutmann_madelene@block.name", password_digest: "$2a$12$QscoG2wUFTCd/2Gep63g/.56D6KurjynKqJ77tJ37feTdrd5Ya6cm"},
-  {username: "joie-spencer", email: "joie.spencer@kris.io", password_digest: "$2a$12$ZDoIRiYsOZNT4cjWs/vWwuotImZPFoz40oODneuz0fwHW5X9Ws5QW"},
-  {username: "langworth-milton", email: "milton_langworth@mueller-bayer.biz", password_digest: "$2a$12$hemRcOHRKyRbjdXlGsaEL.h9ta1hKzOdC44UZ04kMy.zOybZHUGGC"},
-  {username: "rebbecca-block", email: "rebbecca.block@cassin-lynch.name", password_digest: "$2a$12$FtUyFogiW7LQ6fUQaNfDIOr84Gf7oeGZnxnEw7yJGvrd7Lkc8fjX2"},
-  {username: "lowe.alita.mr", email: "mr.lowe.alita@wolf-breitenberg.io", password_digest: "$2a$12$.KUp6saYTA.HgZaMUY6TxutV3vO.KADeiWv5H3gqWV8aizzPKRrn6"},
-  {username: "beatty.hipolito", email: "hipolito_beatty@kassulke-auer.co", password_digest: "$2a$12$H5KjN/vVJQq1Mogt7pBVTuJbTo7jy7TLBi6DANTFfhHP4cjiaH.d."},
-  {username: "quitzon-olevia", email: "olevia.quitzon@champlin.com", password_digest: "$2a$12$M5drfN74zPefAqCa0fzzNe0eo7M.2nVsrE5cJDHjrppSd1arstYOe"},
-  {username: "alton-terry", email: "alton.terry@hartmann.name", password_digest: "$2a$12$zt1j0TJ9BLzpAUOH9LUN7eH5iVRS.9aPtY9PKzXygh.EF5gFn8PWa"},
-  {username: "mcclure_dewayne", email: "mcclure_dewayne@hilpert.co", password_digest: "$2a$12$F6DDABb8zV24nXzWFsDbK.b5NK0zkR6Sar3hvgYNuT3kubY3X/rIW"},
-  {username: "welch_kacey", email: "welch_kacey@schinner.info", password_digest: "$2a$12$T.NEezckNXU6Qe3.0xFIiejc.rCf44oIBZm.bp0sUHzyh1GgqqKxy"},
-  {username: "i.lucilla.langosh", email: "langosh_lucilla_i@nader.com", password_digest: "$2a$12$8FEBmwKUlU4eeDhATbmCeOQ6fzqqSQpr59/pzLBWZEqI4yTlVZpNu"},
-  {username: "ashley.kuhn", email: "kuhn_ashley@orn.name", password_digest: "$2a$12$tpmc8MK61ZZG3mj0zPrWeuc9JaBdkfNtNNTo0cbKov2R/kS5P.c1u"},
-  {username: "keeling.mica", email: "mica_keeling@krajcik-hahn.info", password_digest: "$2a$12$3S7NzKX8kdWMhAAS2uUmz.qy/KuBdZNNlQwg6yPRf5Ng7YbIi5BmK"},
-  {username: "blythe.king", email: "king.blythe@baumbach.biz", password_digest: "$2a$12$HDVeem1aGFNgtusOUgTWkO6Lt70MRmntxfbpJJCogzK1DcbmvfYAi"},
-  {username: "thiel.rosalie", email: "thiel.rosalie@gottlieb.org", password_digest: "$2a$12$JC8g40ri7uTemZ220CcjJen8DbzhJ29bEzT3bJvYARCqO7DHy/Wjy"},
-  {username: "boyer_kristyn", email: "boyer_kristyn@klein.net", password_digest: "$2a$12$6R8bVdd5q24WcX.HEIQJ4.cHqo8PcSdTq/tX6D.C5cpcOpp6kmyYa"},
-  {username: "oma-reynolds-sen", email: "reynolds.oma.sen@larson.net", password_digest: "$2a$12$tJ0ZbXffJopu.ohETUewl..xJyMU0ZJg1L1yG4aCGIWfSqdhg2W9m"},
-  {username: "douglas.willms", email: "douglas.willms@olson-hamill.name", password_digest: "$2a$12$dKCrNGR9YE3x2FLNmB.l8u.4O8ZJi/xrMqzaeZZ3OuV0zRbIHUSyi"},
-  {username: "pagac_willis", email: "pagac_willis@reilly.biz", password_digest: "$2a$12$JRxS8cwzqrGD43kUZL6q4eeeFagrME8ZHLKrNWcYSLJ29ePiIkP0S"},
-  {username: "maragret.christiansen.ms", email: "maragret.ms.christiansen@moen-price.com", password_digest: "$2a$12$jMesfmNUA0E8uwYbl9i9yeF7L2J5BvQV7fxP2iM2CRNe15ziqfFvK"},
-  {username: "franklin.turcotte", email: "franklin_turcotte@weber.biz", password_digest: "$2a$12$W3rrS1nJ3PR.mU1OUQkP8OrrH5Zjn0vjPJDMaTv9lKS05I9jtO3gm"},
-  {username: "turner-alva", email: "alva.turner@schowalter.io", password_digest: "$2a$12$XLAd1VXRg9Ns9eiLwXmR5ehK/hv39d8RJ22UQZUfcvea35BtMguNG"},
-  {username: "angela_runolfsson", email: "angela_runolfsson@renner-marks.net", password_digest: "$2a$12$x7azYd0l9UYwT8k8Jt6V8OyUn66I6jRfY7Cic//YOwFDZXbzBbLfK"},
-  {username: "wade.cormier", email: "cormier.wade@rohan.name", password_digest: "$2a$12$hsxx/ptHyRD6SqJwp6I4HeXlw3gTEwmNl01A98jXzvNxBr7ZeZvIy"},
-  {username: "o.connell.pres.asuncion", email: "asuncion.connell.pres.o@shanahan-bergstrom.co", password_digest: "$2a$12$/PfIeGEfenS63w0K9w0Ks.iVz76aux4dcgoA1W0zREKZ/nSyLqzzi"},
-  {username: "titus.stehr", email: "stehr_titus@collins.co", password_digest: "$2a$12$2Ag4it47unZi12XE/K1e.eb/t2OsQbHqYn4qcAWAljtInzX3mSZBG"},
-  {username: "christian.iii.will", email: "will.iii.christian@rodriguez-mccullough.com", password_digest: "$2a$12$naOLUGpBoz6KEyrvODvmEuB8CFHxgNOwkur7DVw3N9GCZXJA0zcNa"},
-  {username: "d-amore-alva-dr", email: "alva_d_dr_amore@krajcik.io", password_digest: "$2a$12$QwONuAAScSp23psAoQwxy.kFKkVhPlCGPUqi8iT5fd/UL40atNH7e"},
-  {username: "braun_sacha", email: "braun_sacha@champlin-rice.name", password_digest: "$2a$12$BKNV7aRW7DVU3QYDxCOhUeUZQQHbdkTCe0hjzhahRzyE.idmnfBzm"}
+  {username: "flanders-todd", email: "todd.flanders@grant.info", password_digest: "$2a$12$agl5yZB5VnGqyMNxzosOLOUWDtlfA4LXeS3sOJ.V66zZ.dOIQY0n6"},
+  {username: "kwan-cookie", email: "kwan.cookie@koelpin-mitchell.info", password_digest: "$2a$12$8GvBC/90Z2..b5UAKCMkq.DnSuPjJuqXf/aOYnr4u/TqLx0or3AJ6"},
+  {username: "snake.jailbird", email: "snake.jailbird@schmidt.co", password_digest: "$2a$12$GZCMUiIAhNhr7u8LwhfVqOdegYWzJvclc92n1/6iC6.SmVFmtpbBq"},
+  {username: "jimbo-jones", email: "jimbo.jones@labadie-runolfsdottir.io", password_digest: "$2a$12$PvnRuIJwaYrULc2GpOCCgen14fUJuj8qqDczIdnStxCtlWoCwM7va"},
+  {username: "waylon-smithers", email: "smithers.waylon@lehner-okon.net", password_digest: "$2a$12$djAahUt5wdhbZo1OHPId9ehzFz94yAP3e.kNr1vW.yKY9AlSpeZgC"},
+  {username: "terri", email: "terri@wunsch.com", password_digest: "$2a$12$q.1I9kXe.J/ZQ4ryGU700OO48g7lheunbRpRHbpUXxJSZijbO5te6"},
+  {username: "kang", email: "kang@kassulke.io", password_digest: "$2a$12$E6FUlQIv9kf6BU6iL0dhce0kgWv/5SGcXfVMbxz/zPYKB0CFB4fbK"},
+  {username: "flanders-ned", email: "ned_flanders@lehner.co", password_digest: "$2a$12$SOSd76ekKGM.mlmfuG/mE.bFHRqeg1Duen6MYZ7VcCk8xjw4Ij/cq"},
+  {username: "doug", email: "doug@konopelski-swaniawski.com", password_digest: "$2a$12$GG2iYUNwgMAf1MW5DjmxTOQiqosO6HvsP8hB7vhlUVXVvOcam.qk."},
+  {username: "simpson_lisa", email: "simpson_lisa@kreiger.biz", password_digest: "$2a$12$A4YCMwYzu4C0xnWhVcXmpuCT.A52Pk9x8M8cBl9XTke8y/GI8cuBm"},
+  {username: "charlie", email: "charlie@greenfelder.org", password_digest: "$2a$12$L1KU3Ork1u/CZ6YMw01VleFjWs1ruTqrZUzEcNc8V77BZUfQqdys."},
+  {username: "book_comic_guy", email: "book_comic_guy@lowe.co", password_digest: "$2a$12$fyK.3wTpY3ajTINViBpJtOFpK73F7koQ5hZ7yEe1O1Z4K.qNk/Cke"},
+  {username: "riviera_dr_nick", email: "riviera_dr_nick@jenkins.net", password_digest: "$2a$12$9IX4FXjRD2jn2ue3IJcF4u4dCy4id7RyeysU/2ZXXG.TjGg16yC4m"},
+  {username: "flanders.maude", email: "flanders.maude@nicolas.org", password_digest: "$2a$12$BY/UagUIP96re3HJR05V8.PkgCQe8QWzdDIeIf8K75I70wCioMizS"},
+  {username: "eddie", email: "eddie@price-langworth.org", password_digest: "$2a$12$j1ofCWZU6cAR2DnzCCBireDn5qegF/s3KKXfz0IbFMQ8.v.2TsHO."},
+  {username: "flanders_ned", email: "flanders_ned@douglas-mayert.co", password_digest: "$2a$12$6hxI7zGEYiKWDblJKD6mn./hVy0XlWX5QjR1uqmooL5L/rp8I7O.K"},
+  {username: "üter", email: "#ter@morar.biz", password_digest: "$2a$12$vPgWpHtw1KtEkp1B6fNhneIb0NyOn3NBvfpovY5BLnzTtuJ8Nzkae"},
+  {username: "bumblebee.man", email: "bumblebee.man@oberbrunner-nikolaus.biz", password_digest: "$2a$12$uibGAZiyYDs8izOgZILDiecuCYngdLxcwimhWeqVgRPx.39/rp.s6"},
+  {username: "bart-simpson", email: "simpson_bart@swaniawski.co", password_digest: "$2a$12$6CJGa4SljA7UZI47Chqam.228SSG95m/MULiPjghAHwHxdS/UwVqq"},
+  {username: "louie", email: "louie@lemke-king.info", password_digest: "$2a$12$jvU6vFAFa5tW0CiI1fgdUuwZ9jpC/fbIorVnWWV0X5E0u5ttVCRZS"}
 ])
+# User Profile seeds
 UserProfile.create!([
-  {name: "Belkis Donnelly", user_img_url: "https://robohash.org/undequoaccusamus.png?size=300x300&set=set1", bio: "Porro voluptatem optio quia.", phone: "700-993-4999", location: "Quintinmouth, TX", user_id: 1},
-  {name: "Madelene Gutmann", user_img_url: "https://robohash.org/quialiquama.png?size=300x300&set=set1", bio: "Corporis nesciunt minus officia.", phone: "(803) 457-4034", location: "Schillerland, NJ", user_id: 2},
-  {name: "Joie Spencer", user_img_url: "https://robohash.org/aperiamofficiisqui.png?size=300x300&set=set1", bio: "Dolor rem laudantium labore.", phone: "1-693-535-6108", location: "Legrosberg, ME", user_id: 3},
-  {name: "Milton Langworth", user_img_url: "https://robohash.org/quisetquidem.png?size=300x300&set=set1", bio: "Sunt est nesciunt laboriosam.", phone: "(221) 886-8297", location: "East Nelsonberg, IL", user_id: 4},
-  {name: "Rebbecca Block", user_img_url: "https://robohash.org/cupiditateautqui.png?size=300x300&set=set1", bio: "Pariatur omnis est qui.", phone: "131-069-7593", location: "North Neda, HI", user_id: 5},
-  {name: "Mr. Alita Lowe", user_img_url: "https://robohash.org/minuseoslabore.png?size=300x300&set=set1", bio: "Voluptas aut alias in.", phone: "885-446-4761", location: "Lake Blaine, MT", user_id: 6},
-  {name: "Hipolito Beatty", user_img_url: "https://robohash.org/quorecusandaeplaceat.png?size=300x300&set=set1", bio: "Sequi quibusdam reprehenderit quaerat.", phone: "1-726-231-4011", location: "West Ileneport, WA", user_id: 7},
-  {name: "Olevia Quitzon", user_img_url: "https://robohash.org/saepequodipsum.png?size=300x300&set=set1", bio: "Modi doloremque cum reprehenderit.", phone: "846.122.9579", location: "West Lucretiaview, MS", user_id: 8},
-  {name: "Alton Terry", user_img_url: "https://robohash.org/quamexplicaboeveniet.png?size=300x300&set=set1", bio: "Vel harum consequatur aliquam.", phone: "1-626-385-1314", location: "West Teritown, NH", user_id: 9},
-  {name: "Dewayne McClure", user_img_url: "https://robohash.org/voluptatemvoluptasdolorum.png?size=300x300&set=set1", bio: "In occaecati at sit.", phone: "1-733-422-5554", location: "Sashaberg, DE", user_id: 10},
-  {name: "Kacey Welch", user_img_url: "https://robohash.org/iustodeseruntmollitia.png?size=300x300&set=set1", bio: "Et et accusamus dignissimos.", phone: "734-146-4617", location: "Port Blainemouth, OH", user_id: 11},
-  {name: "Lucilla Langosh I", user_img_url: "https://robohash.org/voluptatemisteimpedit.png?size=300x300&set=set1", bio: "Delectus soluta velit officiis.", phone: "175-079-2487", location: "Ardischester, IN", user_id: 12},
-  {name: "Ashley Kuhn", user_img_url: "https://robohash.org/etnumquamaut.png?size=300x300&set=set1", bio: "Exercitationem totam id autem.", phone: "(132) 221-6302", location: "Lindmouth, NC", user_id: 13},
-  {name: "Mica Keeling", user_img_url: "https://robohash.org/etdolorquo.png?size=300x300&set=set1", bio: "Deserunt incidunt aut aut.", phone: "985-251-8969", location: "Thielmouth, NC", user_id: 14},
-  {name: "Blythe King", user_img_url: "https://robohash.org/laudantiumexplicaboprovident.png?size=300x300&set=set1", bio: "Quam veritatis ut illum.", phone: "(435) 245-6414", location: "New Bethanie, WI", user_id: 15},
-  {name: "Rosalie Thiel", user_img_url: "https://robohash.org/modidoloreset.png?size=300x300&set=set1", bio: "Maiores sint officiis qui.", phone: "940.124.6437", location: "Lake Krismouth, OK", user_id: 16},
-  {name: "Kristyn Boyer", user_img_url: "https://robohash.org/velnatusquia.png?size=300x300&set=set1", bio: "Ea magni est sunt.", phone: "142.955.7840", location: "North Kelleychester, GA", user_id: 17},
-  {name: "Sen. Oma Reynolds", user_img_url: "https://robohash.org/veniamquienim.png?size=300x300&set=set1", bio: "Enim tempora at possimus.", phone: "710-050-2946", location: "East Ronnyview, KY", user_id: 18},
-  {name: "Douglas Willms", user_img_url: "https://robohash.org/autemvitaecommodi.png?size=300x300&set=set1", bio: "Sit esse dicta ducimus.", phone: "1-533-822-6945", location: "South Vincenzo, NE", user_id: 19},
-  {name: "Willis Pagac", user_img_url: "https://robohash.org/rerumconsectetursed.png?size=300x300&set=set1", bio: "Veniam nostrum quo minus.", phone: "1-297-123-0562", location: "East Dottymouth, FL", user_id: 20},
-  {name: "Ms. Maragret Christiansen", user_img_url: "https://robohash.org/dignissimosinmolestiae.png?size=300x300&set=set1", bio: "Fugiat suscipit veritatis voluptatibus.", phone: "(325) 707-6451", location: "Sengerton, WI", user_id: 21},
-  {name: "Franklin Turcotte", user_img_url: "https://robohash.org/omnisistenecessitatibus.png?size=300x300&set=set1", bio: "Eum porro hic asperiores.", phone: "(588) 292-9627", location: "Port Haihaven, IL", user_id: 22},
-  {name: "Alva Turner", user_img_url: "https://robohash.org/vitaeinventoretotam.png?size=300x300&set=set1", bio: "Qui eum optio qui.", phone: "1-148-066-1930", location: "Brandonview, IA", user_id: 23},
-  {name: "Angela Runolfsson", user_img_url: "https://robohash.org/sedvelquos.png?size=300x300&set=set1", bio: "Velit esse ut totam.", phone: "325-485-0606", location: "Bauchside, OH", user_id: 24},
-  {name: "Wade Cormier", user_img_url: "https://robohash.org/placeatdebitisunde.png?size=300x300&set=set1", bio: "Rerum nobis officiis dolores.", phone: "851-258-7014", location: "Ariannachester, GA", user_id: 25},
-  {name: "Pres. Asuncion O'Connell", user_img_url: "https://robohash.org/quamvoluptasaspernatur.png?size=300x300&set=set1", bio: "Nihil placeat sed repellendus.", phone: "(116) 929-6086", location: "Deemouth, LA", user_id: 26},
-  {name: "Titus Stehr", user_img_url: "https://robohash.org/voluptatemoptionecessitatibus.png?size=300x300&set=set1", bio: "Blanditiis velit est harum.", phone: "(563) 676-1031", location: "West Alonaland, NY", user_id: 27},
-  {name: "Christian Will III", user_img_url: "https://robohash.org/quiamolestiasdicta.png?size=300x300&set=set1", bio: "Eum laboriosam non consequatur.", phone: "1-594-671-1272", location: "New Jerome, ND", user_id: 28},
-  {name: "Dr. Alva D'Amore", user_img_url: "https://robohash.org/aliaseaut.png?size=300x300&set=set1", bio: "Et quae dolor est.", phone: "1-679-929-6284", location: "Naderstad, MT", user_id: 29},
-  {name: "Sacha Braun", user_img_url: "https://robohash.org/etnequemagnam.png?size=300x300&set=set1", bio: "Rerum occaecati perspiciatis ratione.", phone: "1-452-561-0591", location: "East Rae, SC", user_id: 30}
+  {name: "Todd Flanders", user_img_url: "https://robohash.org/voluptatescorporisperspiciatis.png?size=300x300&set=set1", bio: "Oh, loneliness and cheeseburgers are a dangerous mix.", phone: "500.784.4111", location: "Port Lissa, VT", user_id: 1},
+  {name: "Cookie Kwan", user_img_url: "https://robohash.org/sitconsequaturcorporis.png?size=300x300&set=set1", bio: "Marriage is like a coffin and each kid is another nail.", phone: "362.059.1901", location: "South Nathalie, VT", user_id: 2},
+  {name: "Snake Jailbird", user_img_url: "https://robohash.org/repellendusquibusdameum.png?size=300x300&set=set1", bio: "To alcohol! The cause of, and solution to, all of life's problems.", phone: "1-676-586-1409", location: "Port Jamestad, AR", user_id: 3},
+  {name: "Jimbo Jones", user_img_url: "https://robohash.org/eiusadlaborum.png?size=300x300&set=set1", bio: "Go out on a Tuesday? Who am I, Charlie Sheen?", phone: "1-200-745-1370", location: "South Noel, OK", user_id: 4},
+  {name: "Waylon Smithers", user_img_url: "https://robohash.org/nesciunttemporibusqui.png?size=300x300&set=set1", bio: "Son, if you really want something in this life, you have to work for it. Now quiet! They're about to announce the lottery numbers.", phone: "810.628.7398", location: "Port Lucile, MD", user_id: 5},
+  {name: "Terri", user_img_url: "https://robohash.org/oditomnisvoluptatum.png?size=300x300&set=set1", bio: "Life is just one crushing defeat after another until you just wish Flanders was dead.", phone: "(285) 871-8224", location: "Hettingermouth, PA", user_id: 6},
+  {name: "Kang", user_img_url: "https://robohash.org/abquoautem.png?size=300x300&set=set1", bio: "Cheating is the gift man gives himself.", phone: "(141) 093-9999", location: "South Jacqui, MS", user_id: 7},
+  {name: "Ned Flanders", user_img_url: "https://robohash.org/etomnissuscipit.png?size=300x300&set=set1", bio: "To alcohol! The cause of, and solution to, all of life's problems.", phone: "(142) 236-3304", location: "New Gregoryshire, VT", user_id: 8},
+  {name: "Doug", user_img_url: "https://robohash.org/inmolestiaerepudiandae.png?size=300x300&set=set1", bio: "D'oh!", phone: "787.505.3089", location: "Port Patiencehaven, OH", user_id: 9},
+  {name: "Lisa Simpson", user_img_url: "https://robohash.org/atqueametsint.png?size=300x300&set=set1", bio: "That's it! You people have stood in my way long enough. I'm going to clown college!", phone: "(397) 273-0269", location: "Gislasonfurt, WV", user_id: 10},
+  {name: "Charlie", user_img_url: "https://robohash.org/facilisautmagnam.png?size=300x300&set=set1", bio: "When will I learn? The answers to life’s problems aren’t at the bottom of a bottle, they’re on TV!", phone: "661-170-6374", location: "East Johnsonton, SD", user_id: 11},
+  {name: "Comic Book Guy", user_img_url: "https://robohash.org/occaecatiarchitectoquaerat.png?size=300x300&set=set1", bio: "Books are useless! I only ever read one book, To Kill A Mockingbird, and it gave me absolutely no insight on how to kill mockingbirds!", phone: "1-631-785-9417", location: "Smithamshire, KS", user_id: 12},
+  {name: "Dr. Nick Riviera", user_img_url: "https://robohash.org/iustoquisporro.png?size=300x300&set=set1", bio: "To alcohol! The cause of, and solution to, all of life's problems.", phone: "312.508.9093", location: "South Shirely, MT", user_id: 13},
+  {name: "Maude Flanders", user_img_url: "https://robohash.org/etsintvel.png?size=300x300&set=set1", bio: "Books are useless! I only ever read one book, To Kill A Mockingbird, and it gave me absolutely no insight on how to kill mockingbirds!", phone: "379.730.2879", location: "Binshaven, RI", user_id: 14},
+  {name: "Eddie", user_img_url: "https://robohash.org/distinctioquisquama.png?size=300x300&set=set1", bio: "Marriage is like a coffin and each kid is another nail.", phone: "(857) 992-4454", location: "Hagenesmouth, NC", user_id: 15},
+  {name: "Ned Flanders", user_img_url: "https://robohash.org/voluptasmaioresratione.png?size=300x300&set=set1", bio: "Books are useless! I only ever read one book, To Kill A Mockingbird, and it gave me absolutely no insight on how to kill mockingbirds!", phone: "1-841-334-7253", location: "Lake Myrlechester, AR", user_id: 16},
+  {name: "Üter", user_img_url: "https://robohash.org/nequemaioresaliquid.png?size=300x300&set=set1", bio: "If you pray to the wrong god, you might just make the right one madder and madder.", phone: "805-029-1306", location: "New Racquelberg, AR", user_id: 17},
+  {name: "Bumblebee Man", user_img_url: "https://robohash.org/estfugitdelectus.png?size=300x300&set=set1", bio: "D'oh!", phone: "(294) 278-7713", location: "South Jorge, AR", user_id: 18},
+  {name: "Bart Simpson", user_img_url: "https://robohash.org/ullamquaeneque.png?size=300x300&set=set1", bio: "If you pray to the wrong god, you might just make the right one madder and madder.", phone: "991.374.5106", location: "Feestmouth, OR", user_id: 19},
+  {name: "Louie", user_img_url: "https://robohash.org/etdeseruntrerum.png?size=300x300&set=set1", bio: "Go out on a Tuesday? Who am I, Charlie Sheen?", phone: "541-902-8378", location: "Parkershire, MA", user_id: 20}
 ])
 
-150.times do
+# Generates Posts
+200.times do
   Post.create!(
     description: Faker::Lorem.sentence,
-    user_id: rand(1..30),
+    user_id: rand(1..20),
     wine_id: rand(1..34),
     post_img_url: Faker::LoremFlickr.image(search_terms: ['wine', 'glass'], match_all: true),
     rating: rand(0..5)

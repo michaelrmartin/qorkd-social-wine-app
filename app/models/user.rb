@@ -48,7 +48,7 @@ class User < ApplicationRecord
   def self.generate_users(num_users)
 
     num_users.times do
-      name = Faker::Name.unique.name
+      name = Faker::TvShows::Simpsons.character 
       username = Faker::Internet.unique.username(specifier: name, separators: %w(. _ -))
       email = Faker::Internet.unique.email(name: username)
 
@@ -62,7 +62,7 @@ class User < ApplicationRecord
       UserProfile.create!(
         name: name,
         user_img_url: Faker::Avatar.image,
-        bio: Faker::Lorem.sentence,
+        bio: Faker::TvShows::Simpsons.quote,
         phone: Faker::PhoneNumber.cell_phone,
         location: Faker::Address.city + ", " + Faker::Address.state_abbr,
         user_id: user.id

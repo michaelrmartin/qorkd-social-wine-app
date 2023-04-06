@@ -15,4 +15,10 @@ class Post < ApplicationRecord
     updated_at.strftime("%B %e, %Y")
   end
 
+  def self.user_wine_ratings
+    all.map do |post|
+      {user_id: post.user_id, item_id: post.wine_id, rating: post.rating}
+    end
+  end
+
 end
