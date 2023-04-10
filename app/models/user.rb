@@ -40,6 +40,8 @@ class User < ApplicationRecord
 
   end
 
+  # Generates recommedations for wines and similar users
+
   def user_recommendations
 
     data = Post.user_wine_ratings
@@ -87,6 +89,17 @@ class User < ApplicationRecord
     result.length
   end
 
+  def wines_by_origin_count
+    origin_counts = Hash.new(0)
+    wines.where(posts: { user_id: id })
+         .joins(:origin)
+         .group('origins.country')
+         .count.each do |origin, count|
+      origin_counts[origin] = count
+    end
+    origin_counts
+  end
+    
 
 
 end

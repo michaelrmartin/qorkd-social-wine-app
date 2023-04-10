@@ -3,6 +3,7 @@
   id: user.id,
   username: user.username,
   email: user.email,
-  recommendations: user.user_recommendations
+  recommendations: user.user_recommendations,
+  origins_count: user.wines_by_origin_count
 }
 end
