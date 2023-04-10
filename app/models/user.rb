@@ -100,6 +100,12 @@ class User < ApplicationRecord
     origin_counts
   end
     
-
+  def wine_category_counts
+    {
+      vegan: wines.where(vegan: true).count,
+      sparkling: wines.where(sparkling: true).count,
+      by_color: wines.group(:color).count
+    }
+  end
 
 end
