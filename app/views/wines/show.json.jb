@@ -11,7 +11,7 @@
     organic: @wine.organic,
     sweet: @wine.sweet,
     photo: @wine.photo_url,
-    origin: @wine.origin.country,
+    origin: @wine.origin,
     overall_rating: @wine.overall_rating,
     friendly_created_at: @wine.friendly_created_at,
   }

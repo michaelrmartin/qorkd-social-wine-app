@@ -18,7 +18,7 @@ class UserProfilesController < ApplicationController
 
     cloudinary_url = "https://res.cloudinary.com/do4nbvqf0/image/upload/v1678142825/QORKD/Default-user-image_jh43or.jpg"
     
-    # user_profile = UserProfile.find_by(user_id: current_user.id)
+    user_profile = UserProfile.find_by(user_id: current_user.id)
     
     if !user_profile
       user_profile = UserProfile.new(

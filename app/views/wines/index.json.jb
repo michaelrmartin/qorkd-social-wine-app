@@ -11,7 +11,7 @@
     sparkling: wine.sparkling,
     organic: wine.organic,
     sweet: wine.sweet,
-    country: wine.origin.country,
+    country: wine.origin,
     photo: wine.photo_url,
     overall_rating: wine.overall_rating,
     friendly_created_at: wine.friendly_created_at,

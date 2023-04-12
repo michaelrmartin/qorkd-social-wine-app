@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2ODA3MjI4NzN9.w0V9FzjiPbrXRK-JbVODJ1UgeGGC6MVssYrtp-DUft8
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMSwiZXhwIjoxNjgxNDA4ODkyfQ.rtgsfWmm_z-kEG3AQQTvF-4nnqbcprhTIenZaG2Uk9s
 
 ### Wines Index
 GET http://localhost:3000/wines.json
@@ -24,8 +24,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "username": "buckley",
-  "email": "buckley@test.com",
+  "username": "michael",
+  "email": "michael@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -57,7 +57,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "buckley@test.com",
+  "email": "michael@test.com",
   "password": "password"
 }
 
@@ -74,6 +74,14 @@ Content-Type: application/json
 POST http://localhost:3000/user_profiles.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
+
+{
+  "name": "Michael",
+  "bio": "I love Steely Dan and bold Italian wines!",
+  "phone": "+17708261460",
+  "location": "Chicago, IL",
+  "user_img_url": "https://avatars.githubusercontent.com/u/107774936?v=4"
+}
 
 
 ###User Profile Show

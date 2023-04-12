@@ -19,7 +19,7 @@ class WinesController < ApplicationController
       name: params[:name],
       blend: params[:blend],
       price: params[:price],
-      origin_id: params[:origin_id],
+      origin: params[:origin],
       style: params[:style],
       photo_url: params[:photo_url],
       description: params[:description],
@@ -46,7 +46,7 @@ class WinesController < ApplicationController
     wine.name = params[:name] || wine.name
     wine.blend = params[:blend] || wine.blend
     wine.price = params[:price] || wine.price
-    wine.origin_id = params[:origin_id] || wine.origin_id
+    wine.origin_id = params[:origin] || wine.origin
     wine.style = params[:style] || wine.style
     wine.description = params[:description] || wine.description
     wine.vegan = params[:vegan] || wine.vegan
