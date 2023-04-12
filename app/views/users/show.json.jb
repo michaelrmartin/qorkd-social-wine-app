@@ -3,6 +3,5 @@
   username: @user.username,
   email: @user.email,
   recommendations: @user.user_recommendations,
-  origins_count: @user.wines_by_origin_count,
   wine_category_counts: @user.wine_category_counts
 }

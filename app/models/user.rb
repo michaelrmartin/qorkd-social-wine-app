@@ -53,7 +53,22 @@ class User < ApplicationRecord
     user_recs = recommender.user_recs(self.id)
     similar_users = recommender.similar_users(self.id)
 
-    return {user_recs: user_recs, similar_users: similar_users}
+    recommended_wines = []
+    user_recs.each do |rec|
+      wine_id = rec[:item_id]
+      wine = Wine.find_by(id: wine_id)
+      recommended_wines << wine
+    end
+
+    recommended_users = []
+    similar_users.each do |user|
+      user_id = user[:user_id]
+      user_profile = UserProfile.find_by(id: user_id)
+      recommended_users << user_profile
+    end
+
+
+    return {user_recs: recommended_wines, similar_users: recommended_users}
 
   end
 
@@ -89,22 +104,23 @@ class User < ApplicationRecord
     result.length
   end
 
-  def wines_by_origin_count
-    origin_counts = Hash.new(0)
-    wines.where(posts: { user_id: id })
-         .joins(:origin)
-         .group('origins.country')
-         .count.each do |origin, count|
-      origin_counts[origin] = count
-    end
-    origin_counts
-  end
+  # def wines_by_origin_count
+  #   origin_counts = Hash.new(0)
+  #   wines.where(posts: { user_id: id })
+  #        .joins(:origin)
+  #        .group('origins.country')
+  #        .count.each do |origin, count|
+  #     origin_counts[origin] = count
+  #   end
+  #   origin_counts
+  # end
     
   def wine_category_counts
     {
       vegan: wines.where(vegan: true).count,
       sparkling: wines.where(sparkling: true).count,
-      by_color: wines.group(:color).count
+      by_color: wines.group(:color).count,
+      by_origin: wines.group(:origin).count
     }
   end
 
