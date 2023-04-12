@@ -46,9 +46,15 @@ class Wine < ApplicationRecord
     recommender.fit(data)
 
     item_recs = recommender.item_recs(self.id)
-    
 
-    return {item_recs: item_recs}
+    wine_recs = []
+    item_recs.each do |rec|
+      wine_id = rec[:item_id]
+      wine = Wine.find_by(id: wine_id)
+      wine_recs << wine
+    end
+    
+    return {item_recs: wine_recs}
 
   end
 
