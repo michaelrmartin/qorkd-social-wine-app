@@ -18,6 +18,15 @@ class Wine < ApplicationRecord
     return (total / self.posts.length).round(2)
   end
 
+  def
+    self.top_rated_wines
+    rated = {}
+    Wine.all.each do |wine|
+      rated[wine.name] = {rating: wine.overall_rating, wine_id: wine.id}
+    end
+    rated.sort_by {|k, v| v[:rating]}.reverse.take(5).to_h
+  end
+
   def user_posts(user)
     count = 0
     self.posts.each do |post|
