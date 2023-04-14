@@ -1,7 +1,7 @@
 class WinesController < ApplicationController
 
   def index
-    @wines = Wine.all
+    @wines = Wine.all.includes([:posts])
 
     render template: "wines/index"
   end

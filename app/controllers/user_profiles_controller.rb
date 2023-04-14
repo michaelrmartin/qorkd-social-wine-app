@@ -1,7 +1,7 @@
 class UserProfilesController < ApplicationController
   
   def index
-    @user_profiles = UserProfile.all
+    @user_profiles = UserProfile.all.includes([:user])
 
     render template: "user_profiles/index"
   end
