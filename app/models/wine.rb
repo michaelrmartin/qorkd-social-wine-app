@@ -24,7 +24,7 @@ class Wine < ApplicationRecord
     Wine.all.each do |wine|
       rated[wine.name] = {rating: wine.overall_rating, wine_id: wine.id}
     end
-    rated.sort_by {|k, v| v[:rating]}.reverse.take(5).to_h
+    rated.sort_by {|k, v| v[:rating]}.reverse.take(9).to_h
   end
 
   def user_posts(user)
