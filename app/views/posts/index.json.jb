@@ -2,6 +2,7 @@
 {
   id: post.id,
   user_id: post.user_id,
+  user_name: post.user.username,
   wine_id: post.wine_id,
   wine_name: post.wine.name,
   description: post.description,
