@@ -1,4 +1,4 @@
-class MergeUserProfileIntoUser < ActiveRecord::Migration[7.0]
+class MergeUserProfilesIntoUser < ActiveRecord::Migration[7.0]
   def change
     # Add columns to users table
     add_column :users, :name, :string
