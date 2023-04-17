@@ -3,6 +3,7 @@
   id: post.id,
   user_id: post.user_id,
   user_name: post.user.username,
+  user_image: post.user.user_img_url,
   wine_id: post.wine_id,
   wine_name: post.wine.name,
   description: post.description,

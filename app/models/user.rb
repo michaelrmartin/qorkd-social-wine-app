@@ -4,8 +4,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :email, presence: true, uniqueness: true
   
-
-  has_one :user_profile
+  
   has_many :posts
   has_many :wines, through: :posts
   has_many :follows
@@ -24,16 +23,12 @@ class User < ApplicationRecord
         username: username,
         email: email,
         password: "password",
-        password_confirmation: "password"
-      )
-
-      UserProfile.create!(
+        password_confirmation: "password",
         name: name,
         user_img_url: Faker::Avatar.image,
         bio: Faker::TvShows::Simpsons.quote,
         phone: Faker::PhoneNumber.cell_phone,
-        location: Faker::Address.city + ", " + Faker::Address.state_abbr,
-        user_id: user.id
+        location: Faker::Address.city + ", " + Faker::Address.state_abbr
       )
 
     end

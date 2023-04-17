@@ -1,8 +1,0 @@
-{
-  name: @user_profile.name,
-  user_id: @user_profile.user.id,
-  username: @user_profile.user.username,
-  bio: @user_profile.bio,
-  location: @user_profile.location,
-  user_img_url: @user_profile.user_img_url,
-}

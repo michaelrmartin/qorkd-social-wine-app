@@ -20,8 +20,7 @@ class MergeUserProfilesIntoUser < ActiveRecord::Migration[7.0]
       )
     end
 
-    # Remove user_profile table and foreign key
-    remove_foreign_key :user_profiles, :users
+    # Remove user_profile table
     drop_table :user_profiles
   end
 end

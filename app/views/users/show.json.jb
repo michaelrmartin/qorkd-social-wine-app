@@ -3,5 +3,9 @@
   username: @user.username,
   email: @user.email,
   recommendations: @user.user_recommendations,
-  wine_category_counts: @user.wine_category_counts
+  wine_category_counts: @user.wine_category_counts,
+  name: @user.name,
+  bio: @user.bio,
+  location: @user.location,
+  user_img_url: @user.user_img_url,
 }
