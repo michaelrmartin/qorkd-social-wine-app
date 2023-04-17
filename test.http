@@ -70,42 +70,5 @@ Content-Type: application/json
   "textBody": "Hello!"
 }
 
-### User Profile Post
-POST http://localhost:3000/user_profiles.json
-Content-Type: application/json
-Authorization: Bearer {{jwt}}
 
-{
-  "name": "Michael",
-  "bio": "I love Steely Dan and bold Italian wines!",
-  "phone": "+17708261460",
-  "location": "Chicago, IL",
-  "user_img_url": "https://avatars.githubusercontent.com/u/107774936?v=4"
-}
-
-
-###User Profile Show
-GET http://localhost:3000/user_profiles/2.json
-Content-Type: application/json
-
-
-###User Profile Index
-GET http://localhost:3000/user_profiles.json
-Content-Type: application/json
-
-### User Profile Destroy
-DELETE http://localhost:3000/user_profiles/3
-Content-Type: application/json
-
-
-
-
-### User Profile Update
-PATCH http://localhost:3000/user_profiles/2.json
-Content-Type: application/json
-Authorization: Bearer {{jwt}}
-
-{
-  "name": "Michael"
-}
 
