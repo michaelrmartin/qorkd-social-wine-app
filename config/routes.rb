@@ -21,14 +21,6 @@ Rails.application.routes.draw do
   patch "users/:id" => "users#update"
   delete "users/:id" => "users#destroy"
 
-
-  # User Profile routes
-  get "/user_profiles" => "user_profiles#index"
-  post "/user_profiles" => "user_profiles#create"
-  get "/user_profiles/:id" => "user_profiles#show"
-  patch "/user_profiles/:id" => "user_profiles#update"
-  delete "/user_profiles/:id" => "user_profiles#destroy"
-
   # Session routes
   post "/sessions" => "sessions#create"
   
@@ -40,5 +32,5 @@ Rails.application.routes.draw do
   get "/follows" => "follows#index"
   post "/follows" => "follows#create"
   delete "follows/:id" => "follows#destroy"
-  
+
 end

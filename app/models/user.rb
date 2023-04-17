@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  require 'faker'
 
   has_secure_password
   validates :email, presence: true, uniqueness: true
@@ -10,30 +9,6 @@ class User < ApplicationRecord
   has_many :follows
   has_many :followings, through: :follows
 
-  # Generates demo users and user profiles
-
-  def self.generate_users(num_users)
-
-    num_users.times do
-      name = Faker::TvShows::Simpsons.character 
-      username = Faker::Internet.unique.username(specifier: name, separators: %w(. _ -))
-      email = Faker::Internet.unique.email(name: username)
-
-      user = User.create!(
-        username: username,
-        email: email,
-        password: "password",
-        password_confirmation: "password",
-        name: name,
-        user_img_url: Faker::Avatar.image,
-        bio: Faker::TvShows::Simpsons.quote,
-        phone: Faker::PhoneNumber.cell_phone,
-        location: Faker::Address.city + ", " + Faker::Address.state_abbr
-      )
-
-    end
-
-  end
 
   # Generates recommedations for wines and similar users
 
@@ -58,8 +33,8 @@ class User < ApplicationRecord
     recommended_users = []
     similar_users.each do |user|
       user_id = user[:user_id]
-      user_profile = UserProfile.find_by(id: user_id)
-      recommended_users << user_profile
+      similar_user = User.find_by(id: user_id)
+      recommended_users << similar_user
     end
 
 
