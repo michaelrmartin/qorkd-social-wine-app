@@ -6,11 +6,11 @@
 
 QORKD includes the following features:
 
-User authentication: users can create an account and log in to the app.
-Wine search: users can search for wines by name, varietal, or region.
-Wine rating: users can rate wines they have tried.
-Wine sharing: users can share their favorite wines with others.
-Personalized wine recommendations: the Disco gem is used to generate personalized wine recommendations for users based on their past ratings and preferences.
+- User authentication: users can create an account and log in to the app.
+- Wine search: users can search for wines by name, varietal, or region.
+- Wine rating: users can rate wines they have tried.
+- Wine sharing: users can share their favorite wines with others.
+- Personalized wine recommendations: the Disco gem is used to generate personalized wine recommendations for users based on their past ratings and preferences.
 
 ### Usage
 
