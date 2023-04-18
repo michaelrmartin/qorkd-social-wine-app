@@ -51,9 +51,20 @@ end
 gem "http"
 gem "jb"
 gem "seed_dump"
+
+# twilio gem - text messaging
 gem 'twilio-ruby', '~> 5.71.0'
+
+# cloudinary gem - file uploads
 gem "cloudinary"
+
+# disco gem - collaborative filtering
 gem "disco"
+
+# faker gem - generate demo data
 gem "faker"
+
 gem "activerecord-import"
+
+# bullet gem - track n+1 query instances
 gem "bullet"
