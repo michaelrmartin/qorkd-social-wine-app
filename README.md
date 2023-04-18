@@ -1,33 +1,6 @@
 # QORKD Social Wine App
 
-## QORKD is a full-stack web application that allows causal wine drinkers to discover new wines, share their favorite wines with others, and receive personalized wine recommendations. The backend was built in Ruby on Rails and the frontend was built with React. QORKD integrates Twilio to enable users send recommendations via text and Cloudinary to store and share images. QORKD utilizes the Disco gem to generate personalized wine recommendations for users based on their past ratings and preferences.
-
-This is a social wine app called QORKD, which allows users to discover new wines,
-
-### Installation
-
-To install QORKD, follow these steps:
-
-Clone the repository to your local machine:
-
-bash
-Copy code
-git clone https://github.com/michaelrmartin/qorkd-social-wine-app.git
-Install the necessary dependencies by running:
-
-Copy code
-bundle install
-Create the database and run migrations:
-
-lua
-Copy code
-rails db:create
-rails db:migrate
-Start the server:
-
-Copy code
-rails s
-Visit http://localhost:3000 in your browser to view the app.
+### QORKD is a full-stack web application that allows causal wine drinkers to discover new wines, share their favorite wines with others, and receive personalized wine recommendations. The backend was built in Ruby on Rails and the frontend was built with React. QORKD integrates Twilio to enable users send recommendations via text and Cloudinary to store and share images. QORKD utilizes the Disco gem to generate personalized wine recommendations for users based on their past ratings and preferences.
 
 ### Features
 
