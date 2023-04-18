@@ -1,24 +1,50 @@
-# README
+# QORKD Social Wine App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## QORKD is a full-stack web application that allows causal wine drinkers to discover new wines, share their favorite wines with others, and receive personalized wine recommendations. The backend was built in Ruby on Rails and the frontend was built with React. QORKD integrates Twilio to enable users send recommendations via text and Cloudinary to store and share images. QORKD utilizes the Disco gem to generate personalized wine recommendations for users based on their past ratings and preferences.
 
-Things you may want to cover:
+This is a social wine app called QORKD, which allows users to discover new wines,
 
-* Ruby version
+### Installation
 
-* System dependencies
+To install QORKD, follow these steps:
 
-* Configuration
+Clone the repository to your local machine:
 
-* Database creation
+bash
+Copy code
+git clone https://github.com/michaelrmartin/qorkd-social-wine-app.git
+Install the necessary dependencies by running:
 
-* Database initialization
+Copy code
+bundle install
+Create the database and run migrations:
 
-* How to run the test suite
+lua
+Copy code
+rails db:create
+rails db:migrate
+Start the server:
 
-* Services (job queues, cache servers, search engines, etc.)
+Copy code
+rails s
+Visit http://localhost:3000 in your browser to view the app.
 
-* Deployment instructions
+### Features
 
-* ...
+QORKD includes the following features:
+
+User authentication: users can create an account and log in to the app.
+Wine search: users can search for wines by name, varietal, or region.
+Wine rating: users can rate wines they have tried.
+Wine sharing: users can share their favorite wines with others.
+Personalized wine recommendations: the Disco gem is used to generate personalized wine recommendations for users based on their past ratings and preferences.
+
+### Usage
+
+To use QORKD, follow these steps:
+
+- Login in with the email "michael@test.com" and password "password".
+- Search for wines using the search bar on the homepage.
+- Rate wines you have tried by clicking on the "Rate" button on the wine's page.
+- Share your favorite wines with others by clicking on the "Share" button on the wine's page.
+- Receive personalized wine recommendations on your homepage.
