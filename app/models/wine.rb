@@ -37,26 +37,26 @@ class Wine < ApplicationRecord
     count
   end
 
-  def wine_recommendations
+  # def wine_recommendations
 
-    data = Post.user_wine_ratings
+  #   data = Post.user_wine_ratings
 
-    recommender = Disco::Recommender.new
+  #   recommender = Disco::Recommender.new
 
-    recommender.fit(data)
+  #   recommender.fit(data)
 
-    item_recs = recommender.item_recs(self.id)
+  #   item_recs = recommender.item_recs(self.id)
 
-    wine_recs = []
-    item_recs.each do |rec|
-      wine_id = rec[:item_id]
-      wine = Wine.find_by(id: wine_id)
-      wine_recs << wine
-    end
+  #   wine_recs = []
+  #   item_recs.each do |rec|
+  #     wine_id = rec[:item_id]
+  #     wine = Wine.find_by(id: wine_id)
+  #     wine_recs << wine
+  #   end
     
-    return {item_recs: wine_recs}
+  #   return {item_recs: wine_recs}
 
-  end
+  # end
 
 
   def friendly_created_at

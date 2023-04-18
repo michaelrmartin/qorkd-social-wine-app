@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+  name: Barrel Heist Bourbon Barrel Aged Cabernet Sauvignon
+  blend: Cabernet Sauvignon
+  price: 7.99
+  style: Robust and fruit-forward
+  description: Notes of vanilla caramel and dark spices.
+  vegan: true
+  color: Red
+  sparkling: false
+  organic: false
+  sweet: Dry
+  photo_url: https://images.vivino.com/thumbs/2G_FnMB2SXe56u6kiy2Hpg_pb_x960.png
+  origin: United States
