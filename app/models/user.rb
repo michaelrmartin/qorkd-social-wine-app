@@ -6,8 +6,8 @@ class User < ApplicationRecord
   
   has_many :posts
   has_many :wines, through: :posts
-  # has_many :follows
-  # has_many :followings, through: :follows
+  has_many :follows
+  has_many :followings, through: :follows
 
   def num_unique_wines
     result = []
@@ -63,26 +63,26 @@ class User < ApplicationRecord
 
   end
 
-  # Follow methods
+  Follow methods
 
-  # def follows_array
+  def follows_array
 
-  #   self.follows.map {|follow| follow.follow.id}
+    self.follows.map {|follow| follow.follow.id}
 
-  # end
+  end
 
-  # def num_followed
-  #   self.followings.length
-  # end
+  def num_followed
+    self.followings.length
+  end
 
-  # def num_followers
-  #   users = User.all.includes(:follows)
-  #   count = 0
-  #   users.each do |user|
-  #     count += 1 if user.follows_aray.include?(self.id)
-  #   end
-  #   count
-  # end
+  def num_followers
+    users = User.all.includes(:follows)
+    count = 0
+    users.each do |user|
+      count += 1 if user.follows_aray.include?(self.id)
+    end
+    count
+  end
   
     
   def wine_category_counts
