@@ -5,6 +5,8 @@ class Wine < ApplicationRecord
   validates :price, presence: true
 
   has_many :posts
+  
+  has_many :users, through: :posts
 
   def overall_rating
     total = 0
@@ -24,7 +26,7 @@ class Wine < ApplicationRecord
     Wine.all.each do |wine|
       rated[wine.name] = {rating: wine.overall_rating, wine_id: wine.id}
     end
-    rated.sort_by {|k, v| v[:rating]}.reverse.take(9).to_h
+    rated.sort_by {|k, v| v[:rating]}.reverse.take(5).to_h
   end
 
   def user_posts(user)
@@ -37,26 +39,26 @@ class Wine < ApplicationRecord
     count
   end
 
-  # def wine_recommendations
+  def wine_recommendations
 
-  #   data = Post.user_wine_ratings
+    data = Post.user_wine_ratings
 
-  #   recommender = Disco::Recommender.new
+    recommender = Disco::Recommender.new
 
-  #   recommender.fit(data)
+    recommender.fit(data)
 
-  #   item_recs = recommender.item_recs(self.id)
+    item_recs = recommender.item_recs(self.id)
 
-  #   wine_recs = []
-  #   item_recs.each do |rec|
-  #     wine_id = rec[:item_id]
-  #     wine = Wine.find_by(id: wine_id)
-  #     wine_recs << wine
-  #   end
+    wine_recs = []
+    item_recs.each do |rec|
+      wine_id = rec[:item_id]
+      wine = Wine.find_by(id: wine_id)
+      wine_recs << wine
+    end
     
-  #   return {item_recs: wine_recs}
+    return {item_recs: wine_recs}
 
-  # end
+  end
 
 
   def friendly_created_at

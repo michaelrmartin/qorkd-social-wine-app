@@ -40,7 +40,7 @@ Wine.create!([
 
 # Generates demo users
 
-25.times do
+10.times do
   name = Faker::TvShows::Simpsons.character 
   username = Faker::Internet.unique.username(specifier: name, separators: %w(. _ -))
   email = Faker::Internet.unique.email(name: username)
@@ -61,10 +61,10 @@ end
 # Generates demo Posts
 search_terms = ['glass', 'bottle', 'barrel', 'decanter', 'vino', 'vin', 'cabernet', 'champagne', 'chardonnay', 'pinot', 'tasting', 'grapes', 'vineyard']
 
-300.times do
+100.times do
   Post.create!(
-    description: Faker::Lorem.sentence,
-    user_id: rand(1..15),
+    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true),
+    user_id: rand(1..10),
     wine_id: rand(1..34),
     post_img_url: Faker::LoremFlickr.image(search_terms: ['wine', search_terms.sample(2)]),
     rating: rand(0..5)
