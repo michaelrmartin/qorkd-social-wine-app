@@ -63,7 +63,7 @@ class User < ApplicationRecord
 
   end
 
-  Follow methods
+  # Follow methods
 
   def follows_array
 
