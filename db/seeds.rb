@@ -67,6 +67,6 @@ search_terms = ['glass', 'bottle', 'barrel', 'decanter', 'vino', 'vin', 'caberne
     user_id: rand(1..10),
     wine_id: rand(1..34),
     post_img_url: Faker::LoremFlickr.image(search_terms: ['wine', search_terms.sample(2)]),
-    rating: rand(0..5)
+    rating: rand(1..5)
   )
 end
