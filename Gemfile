@@ -68,3 +68,5 @@ gem "activerecord-import"
 
 # bullet gem - track n+1 query instances
 gem "bullet"
+
+gem "dockerfile-rails", ">= 1.3", :group => :development
