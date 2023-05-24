@@ -20,8 +20,7 @@ class Wine < ApplicationRecord
     return (total / self.posts.length).round(2)
   end
 
-  def
-    self.top_rated_wines
+  def self.top_rated_wines
     rated = {}
     Wine.all.each do |wine|
       rated[wine.name] = {rating: wine.overall_rating, wine_id: wine.id}
