@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   
   # Wine routes
-  get "/wines" => "wines#index"
-  post "/wines" => "wines#create"
-  get "/wines/:id" => "wines#show"
-  patch "/wines/:id" => "wines#update"
-  delete "/wines/:id" => "wines#destroy"
+
+  resources :wines
 
    # Post routes
    get "/posts" => "posts#index"
@@ -28,7 +25,6 @@ Rails.application.routes.draw do
   post "/sendtext" => "twilio#create"
 
   # Follow routes
-
   get "/follows" => "follows#index"
   post "/follows" => "follows#create"
   delete "follows/:id" => "follows#destroy"
