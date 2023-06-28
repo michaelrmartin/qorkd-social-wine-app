@@ -1,32 +1,21 @@
 Rails.application.routes.draw do
   
   # Wine routes
-
   resources :wines
 
-   # Post routes
-   get "/posts" => "posts#index"
-   post "/posts" => "posts#create"
-   get "/posts/:id" => "posts#show"
-   patch "/posts/:id" => "posts#update"
-   delete "/posts/:id" => "posts#destroy"
+  # Post routes
+  resources :posts
   
   # User routes
-  get "/users" => "users#index"
-  post "/users" => "users#create"
-  get "/users/:id" => "users#show"
-  patch "users/:id" => "users#update"
-  delete "users/:id" => "users#destroy"
+  resources :users
 
   # Session routes
-  post "/sessions" => "sessions#create"
-  
-  # Twilio route
-  post "/sendtext" => "twilio#create"
+  resources :sessions, only: %i[create]
 
   # Follow routes
-  get "/follows" => "follows#index"
-  post "/follows" => "follows#create"
-  delete "follows/:id" => "follows#destroy"
+  resources :follows, only: %i[index create show]
+  
+  # Twilio route
+  resources :twilio, only: %i[create]
 
 end
