@@ -26,19 +26,21 @@ RSpec.describe "Wines", type: :request do
       wine = JSON.parse(response.body)
 
       expect(response).to have_http_status(200)
-      expect(wine["name"]).to eq("Block Red Wine Shiraz")
-      expect(wine["blend"]).to eq("Shiraz")
-      expect(wine["price"]).to eq("12.99")
-      expect(wine["style"]).to eq("Smooth and dry, but fruit  forward")
-      expect(wine["photo"]).to eq("www.example.com")
-      expect(wine["vegan"]).to eq(false)
-      expect(wine["sparkling"]).to eq(false)
-      expect(wine["description"]).to eq("Blackberry, currant, and hints of fig with a smooth finish.")
-      expect(wine["color"]).to eq("Red")
-      expect(wine["sweet"]).to eq("Dry")
-      expect(wine["organic"]).to eq(false)
-      expect(wine["origin"]).to eq("Australia")
-
+      expect(wine).to include(
+        "name" => "Block Red Wine Shiraz",
+        "blend" => "Shiraz",
+        "price" => "12.99",
+        "style" => "Smooth and dry, but fruit  forward",
+        "photo" => "www.example.com",
+        "vegan" => false,
+        "sparkling" => false,
+        "description" => "Blackberry, currant, and hints of fig with a smooth finish.",
+        "color" => "Red",
+        "sweet" => "Dry",
+        "organic" => false,
+        "origin" => "Australia"
+      )
+      
     end
   end
 end
