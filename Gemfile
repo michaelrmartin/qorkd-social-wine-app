@@ -38,7 +38,7 @@ gem "bootsnap", require: false
 gem "rack-cors"
 
 group :development, :test do
-  gem "minitest-rails", "~> 7.0.0"
+  gem 'rspec-rails', '~> 6.0.0'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
@@ -68,8 +68,5 @@ gem "activerecord-import"
 
 # bullet gem - track n+1 query instances
 gem "bullet"
-
-# Rspec gem - unit testing
-gem 'rspec-rails', '~> 6.0.0'
 
 gem "dockerfile-rails", ">= 1.3", :group => :development

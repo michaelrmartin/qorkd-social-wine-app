@@ -144,9 +144,6 @@ GEM
     mime-types-data (3.2022.0105)
     mini_mime (1.1.2)
     minitest (5.16.3)
-    minitest-rails (7.0.0)
-      minitest (~> 5.10)
-      railties (~> 7.0.0)
     msgpack (1.6.0)
     net-imap (0.3.2)
       date
@@ -263,7 +260,6 @@ DEPENDENCIES
   http
   jb
   jwt
-  minitest-rails (~> 7.0.0)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
