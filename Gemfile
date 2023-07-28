@@ -69,4 +69,7 @@ gem "activerecord-import"
 # bullet gem - track n+1 query instances
 gem "bullet"
 
+# Rspec gem - unit testing
+gem 'rspec-rails', '~> 6.0.0'
+
 gem "dockerfile-rails", ">= 1.3", :group => :development
