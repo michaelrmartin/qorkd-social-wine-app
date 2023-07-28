@@ -12,7 +12,5 @@
     sweet: @wine.sweet,
     photo: @wine.photo_url,
     origin: @wine.origin,
-    overall_rating: @wine.overall_rating,
-    recommendations: @wine.wine_recommendations,
     friendly_created_at: @wine.friendly_created_at,
   }
