@@ -44,3 +44,44 @@ RSpec.describe "Wines", type: :request do
     end
   end
 end
+
+RSpec.describe "Wines", type: :request do
+  describe "POST /wines/" do
+    it "creates a new wine" do
+      post "/wines", params: {
+        name: "Michael's BEST EVER WINE",
+        blend: "All the grapes",
+        price: "$999.99",
+        origin: "Logan Square",
+        style: "Oooey gooey goodness",
+        photo_url: "www.michaelwine.com/jpg.",
+        description: "Brassy and brash. Pair with hot dogs",
+        vegan: false,
+        sparkling: false,
+        color: "Red",
+        sweet: "Dry",
+        organic: false
+      }
+
+      wine = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      expect(wine).to include(
+        "name" => "Michael's BEST EVER WINE",
+        "blend" => "All the grapes",
+        "price" => "$999.99",
+        "origin" => "Logan Square",
+        "style" => "Oooey gooey goodness",
+        "photo_url" => "www.michaelwine.com/jpg.",
+        "description" => "Brassy and brash. Pair with hot dogs",
+        "vegan" => false,
+        "sparkling" => false,
+        "color" => "Red",
+        "sweet" => "Dry",
+        "organic" => false
+      )
+    end
+  end
+end
+
+
+
