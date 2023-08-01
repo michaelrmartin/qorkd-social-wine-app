@@ -57,7 +57,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "michael@test.com",
+  "email": "buckley@test.com",
   "password": "password"
 }
 
@@ -69,3 +69,4 @@ Content-Type: application/json
   "phone": "+17708261460",
   "textBody": "Hello!"
 }
+

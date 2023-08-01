@@ -8,7 +8,7 @@ class WinesController < ApplicationController
 
   def show
     
-    @wine = Wine.includes(:posts).find_by(id: params[:id])
+    @wine = Wine.includes(:posts).find(show_params)
 
     render template: "wines/show"
 
@@ -47,6 +47,10 @@ class WinesController < ApplicationController
   end
 
   private
+
+  def show_params
+    params.require(:id)
+  end
 
   def wine_params
     params.require(:wine).permit(
