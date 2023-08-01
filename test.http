@@ -13,7 +13,7 @@ PATCH http://localhost:3000/wines/33.json
 Content-Type: application/json
 
 {
-  "name": "Ruggero di Bardo Susumaniello"
+  "name": "Floriana Gruner Veltliner"
 }
 
 ### Wines Destroy
